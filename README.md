@@ -1,11 +1,12 @@
-# ffshot
+# xsnap
 
 Takes screenshots on Linux using `ffmpeg -f x11grab`, handling a few annoying details.
+All programs take a screenshot of the current `DISPLAY` and write it to stdout.
 
-Provides three scripts:
+Provides three executables:
 
-* `lossy-png-screenshot` - outputs a 256-color PNG screenshot of the current `DISPLAY` to stdout.  Requires `pngquant` built with a libpng 1.6.
+* `xsnap-png-lossless` - outputs a true-color PNG screenshot.
 
-* `lossless-png-screenshot` - outputs a true-color PNG screenshot of the current `DISPLAY` to stdout.
+* `xsnap-png-256` - outputs a 256-color PNG screenshot.  Requires [pngquant](https://github.com/pornel/pngquant) built with a libpng 1.6.
 
-* `lossy-jpg-screenshot` - outputs a JPEG screenshot of the current `DISPLAY` to stdout.
+* `xsnap-jpg` - outputs a JPEG screenshot.
