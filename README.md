@@ -1,7 +1,7 @@
 # xsnap
 
 xsnap takes screenshots on Linux using `ffmpeg -f x11grab`, handling a few annoying details.
-I have found that ffmpeg's x11grab is accurate, reliable, and doesn't cause any slowdowns.
+I have found that ffmpeg's x11grab is [accurate, reliable, and doesn't cause any slowdowns](https://ludios.org/windows-to-linux-notes/#taking-screenshots).
 It also paints the mouse cursor onto the screenshot.
 
 Provides three executables.  All of them take a screenshot of the current `DISPLAY` and write to stdout.
