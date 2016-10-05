@@ -9,7 +9,7 @@ Provides three executables.  All of them take a screenshot of the current `DISPL
 * `xsnap-png-lossless` - outputs a true-color PNG screenshot.
 
 * `xsnap-png-256` - outputs a 256-color PNG screenshot.
-  Requires [pngquant](https://github.com/pornel/pngquant) built with a libpng 1.6.
+  Requires [pngquant](https://github.com/pornel/pngquant) built with libpng 1.6.
 
 * `xsnap-jpg` - outputs a JPEG screenshot.
 
