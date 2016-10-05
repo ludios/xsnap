@@ -1,0 +1,22 @@
+#!/bin/sh
+
+resolution=$(xwininfo -root | grep -oP -- '-geometry \K([0-9]+x[0-9]+)')
+
+
+
+
+
+
+# timeout 10s because ffmpeg version 2.8.6-1ubuntu2 (Ubuntu 16.04) sometimes goes into an infinite loop:
+# select(1, [0], NULL, NULL, {0, 0})      = 1 (in [0], left {0, 0})
+# read(0, "", 1)                          = 0
+timeout -s KILL --foreground 10s \
+	ffmpeg \
+		-loglevel 24 \
+		-video_size "$resolution" \
+		-f x11grab \
+		-i "$DISPLAY" \
+		-frames:v 1 \
+		-f image2pipe \
+		-vcodec png \
+		-compression_level 100 -
