@@ -2,7 +2,6 @@
 
 resolution=$(xwininfo -root | grep -oP -- '-geometry \K([0-9]+x[0-9]+)')
 
-
 # timeout 10s because ffmpeg version 2.8.6-1ubuntu2 (Ubuntu 16.04) sometimes goes into an infinite loop:
 # select(1, [0], NULL, NULL, {0, 0})      = 1 (in [0], left {0, 0})
 # read(0, "", 1)                          = 0
@@ -10,6 +9,7 @@ resolution=$(xwininfo -root | grep -oP -- '-geometry \K([0-9]+x[0-9]+)')
 # -compression_level 0 is faster *and* (sometimes?) results in a smaller image after processing by pngquant
 #
 # --speed 3 (the default) results in smaller images than --speed 10
+#
 timeout -s KILL --foreground 10s \
 	ffmpeg \
 		-loglevel 16 \
