@@ -1,6 +1,6 @@
 #!/bin/sh
 
-resolution=$(xwininfo -root | grep -oP -- '-geometry \K([0-9]+x[0-9]+)')
+resolution=$(xdpyinfo | fgrep -m 1 dimensions: | grep -m 1 -P -o '\d+x\d+' | head -n 1)
 
 # timeout 10s because ffmpeg version 2.8.6-1ubuntu2 (Ubuntu 16.04) sometimes goes into an infinite loop:
 # select(1, [0], NULL, NULL, {0, 0})      = 1 (in [0], left {0, 0})
